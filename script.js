@@ -63,7 +63,7 @@ if (isMobile) {
     installPopup.innerHTML = `
       <div class="popup-content">
         <h3>نصب برنامه</h3>
-        <p>برای تجربه بهتر، فرهنگ واژگان گنجینه را به صفحه اصلی خود اضافه کنید!</p>
+        <p>برای کارکرد بهتر، فرهنگ واژگان گنجینه را به صفحه اصلی گوشی خود برنشانید(نصب کنید)!</p>
         <button id="install-btn">نصب</button>
         <button id="dismiss-btn">بعدا</button>
       </div>
