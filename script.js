@@ -27,13 +27,13 @@ search.addEventListener('input', () => {
     li.onclick = () => {
       search.value = word;
       suggestions.innerHTML = '';
-      definition.innerText = 'برابر پارسی:  ' + dictionary[word];
+      definition.innerHTML = '<span class="label">برابر پارسی: </span>' + dictionary[word];
     };
     suggestions.appendChild(li);
   });
 
   if (dictionary[term]) {
-    definition.innerText = 'برابر پارسی:  ' + dictionary[term];
+    definition.innerHTML = '<span class="label">برابر پارسی: </span>' + dictionary[term];
   }
 });
 

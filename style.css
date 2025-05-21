@@ -3,26 +3,26 @@ html, body {
   margin: 0;
   display: flex;
   flex-direction: column;
-  background: linear-gradient(135deg, #e0e7ff, #f0f4ff); /* Subtle gradient background */
-  font-family: 'Vazir', sans-serif; /* Persian-friendly font, assuming it's available */
+  background: linear-gradient(135deg, #e0e7ff, #f0f4ff);
+  font-family: 'Vazir', sans-serif;
 }
 
 body {
-  overflow-y: auto; /* Ensure scrollability */
+  overflow-y: auto;
 }
 
 .container {
   flex: 1;
-  max-width: 600px; /* Slightly wider for better spacing */
+  max-width: 600px;
   width: 100%;
   margin: 2rem auto;
   padding: 2rem;
   box-sizing: border-box;
-  background: rgba(255, 255, 255, 0.15); /* Glassy translucent background */
+  background: rgba(255, 255, 255, 0.15);
   border-radius: 16px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
-  backdrop-filter: blur(10px); /* Frosted glass effect */
-  border: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border */
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 input {
@@ -31,7 +31,7 @@ input {
   font-size: 1.1rem;
   box-sizing: border-box;
   margin-bottom: 1.5rem;
-  background: rgba(255, 255, 255, 0.2); /* Glassy input background */
+  background: rgba(255, 255, 255, 0.2);
   border: none;
   border-radius: 12px;
   color: #333;
@@ -42,7 +42,7 @@ input {
 input:focus {
   outline: none;
   background: rgba(255, 255, 255, 0.3);
-  box-shadow: 0 0 10px rgba(33, 150, 243, 0.5); /* Blue glow on focus */
+  box-shadow: 0 0 10px rgba(33, 150, 243, 0.5);
 }
 
 #suggestions {
@@ -54,7 +54,7 @@ input:focus {
 #suggestions li {
   padding: 0.5rem 1rem;
   margin: 0.3rem 0;
-  background: rgba(255, 255, 255, 0.1); /* Glassy suggestion items */
+  background: rgba(255, 255, 255, 0.1);
   border-radius: 8px;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -62,14 +62,14 @@ input:focus {
 }
 
 #suggestions li:hover {
-  background: rgba(33, 150, 243, 0.2); /* Hover effect with blue tint */
-  transform: translateX(5px); /* Subtle slide effect */
+  background: rgba(33, 150, 243, 0.2);
+  transform: translateX(5px);
 }
 
 #definition {
   margin-top: 1.5rem;
   padding: 1rem;
-  background: rgba(255, 255, 255, 0.15); /* Glassy definition background */
+  background: rgba(255, 255, 255, 0.15);
   border-radius: 12px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(8px);
@@ -77,10 +77,19 @@ input:focus {
   font-size: 1.1rem;
 }
 
+.label {
+  font-weight: bold;
+  color: #1565c0; /* Vibrant blue to match the glassy theme */
+  background: rgba(255, 255, 255, 0.3); /* Slightly more opaque glassy background */
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
+  margin-right: 0.5rem;
+}
+
 .footer {
   text-align: center;
   padding: 1.5rem;
-  background: rgba(255, 255, 255, 0.1); /* Glassy footer */
+  background: rgba(255, 255, 255, 0.1);
   border-top: 1px solid rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(10px);
   font-size: 0.9rem;
@@ -102,14 +111,14 @@ input:focus {
 
 h1 {
   text-align: center;
-  color: #1e88e5; /* Vibrant blue for heading */
+  color: #1e88e5;
   font-size: 2rem;
   margin-bottom: 1.5rem;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .about {
-  background: rgba(255, 255, 255, 0.15); /* Glassy about section */
+  background: rgba(255, 255, 255, 0.15);
   padding: 1.5rem;
   margin: 2rem auto;
   max-width: 600px;
