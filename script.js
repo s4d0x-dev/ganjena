@@ -1,4 +1,5 @@
 let dictionary = {};
+let deferredPrompt = null;
 
 fetch('data/dictionary.json')
   .then(res => res.json())
@@ -40,4 +41,56 @@ search.addEventListener('input', () => {
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('sw.js')
     .then(() => console.log('Service Worker Registered'));
+}
+
+// PWA Install Prompt
+const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth < 768;
+
+if (isMobile) {
+  window.addEventListener('beforeinstallprompt', (e) => {
+    e.preventDefault(); // Prevent default browser prompt
+    deferredPrompt = e; // Store the event for later use
+
+    // Show custom install pop-up
+    const installPopup = document.createElement('div');
+    installPopup.id = 'install-popup';
+    installPopup.innerHTML = `
+      <div class="popup-content">
+        <h3>نصب برنامه</h3>
+        <p>برای تجربه بهتر، فرهنگ واژگان گنجینه را به صفحه اصلی خود اضافه کنید!</p>
+        <button id="install-btn">نصب</button>
+        <button id="dismiss-btn">بعدا</button>
+      </div>
+    `;
+    document.body.appendChild(installPopup);
+
+    // Handle install button click
+    document.getElementById('install-btn').addEventListener('click', () => {
+      installPopup.remove();
+      deferredPrompt.prompt(); // Show the native install prompt
+      deferredPrompt.userChoice.then((choiceResult) => {
+        if (choiceResult.outcome === 'accepted') {
+          console.log('User accepted the install prompt');
+        } else {
+          console.log('User dismissed the install prompt');
+        }
+        deferredPrompt = null;
+      });
+    });
+
+    // Handle dismiss button click
+    document.getElementById('dismiss-btn').addEventListener('click', () => {
+      installPopup.remove();
+      deferredPrompt = null;
+    });
+  });
+}
+
+if (!localStorage.getItem('installPromptDismissed')) {
+  // Show pop-up and set localStorage on dismiss
+  document.getElementById('dismiss-btn').addEventListener('click', () => {
+    installPopup.remove();
+    deferredPrompt = null;
+    localStorage.setItem('installPromptDismissed', 'true');
+  });
 }
