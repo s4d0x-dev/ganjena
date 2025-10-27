@@ -43,6 +43,7 @@ input:focus {
   outline: none;
   background: rgba(255, 255, 255, 0.3);
   box-shadow: 0 0 17px rgba(32, 135, 247, 0.644);
+  color: #333;
 }
 
 #suggestions {
