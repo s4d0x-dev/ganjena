@@ -1,4 +1,4 @@
-const CACHE_NAME = 'ganjena-v1_2_0';
+const CACHE_NAME = 'ganjena-v1_3_0';
 const urlsToCache = [
   '/ganjena/',
   '/ganjena/index.html',
